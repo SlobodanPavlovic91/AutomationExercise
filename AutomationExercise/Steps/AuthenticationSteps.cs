@@ -87,6 +87,32 @@ namespace AutomationExercise.Steps
             ut.ClickOnElement(acp.continueBtn);
 
         }
+        [Given(@"user registers new account with '(.*)' name")]
+        public void GivenUserRegistersNewAccountWithName(string name)
+        {
+            GivenUserOpensSignInPage();
+            GivenEntersNameAndValidEmailAddress(name);
+            GivenClicksOnSignSignUpButton();
+            WhenUserFillsInAllReqiredFields();
+            WhenSubmitsTheSignupForm();
+            AccountCreatedPage acp = new AccountCreatedPage(Driver);
+            ut.ClickOnElement(acp.continueBtn);
+
+
+        }
+
+        [When(@"user selects option for deleting the account")]
+        public void WhenUserSelectsOptionForDeletingTheAccount()
+        {
+            
+            ut.ClickOnElement(hp.deleteAcc);
+        }
+
+        [Then(@"account will be deleted with '(.*)' message")]
+        public void ThenAccountWillBeDeletedWithMessage(string message)
+        {
+            Assert.True(ut.TextPresentInElement(message),"Account is not deleted");
+        }
 
     }
 }

@@ -27,6 +27,8 @@ namespace AutomationExercise.Steps
             ut.EnterTextInElement(cup.email, TestConstants.UserName);
             ut.EnterTextInElement(cup.subject, TestConstants.Subject);
             ut.EnterTextInElement(cup.message, TestConstants.Message);
+            string path = @"C:\Users\slobodan.pavlovic\Desktop\Deutsch\QA\QA Engineer KURS-dan1.pdf";
+            Driver.FindElement(cup.uploadBtn).SendKeys(path);
         }
         
         [When(@"submits contact us form")]

@@ -27,5 +27,7 @@ namespace AutomationExercise.Helpers
         public const string Subject = "Request";
         public const string Message = "WOuld you be able to remove all adds from your website?";
 
+        //PLP
+        public const string Product = "t-shirt";
     }
 }
